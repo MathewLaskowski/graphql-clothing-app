@@ -21,9 +21,9 @@ const GET_CART_HIDDEN = gql`
 
 const GET_CART_ITEMS = gql`
   {
-    cartIems @client
+    cartItems @client
   }
-`
+`;
 
 export const resolvers = {
   Mutation: {
@@ -45,7 +45,7 @@ export const resolvers = {
         query: GET_CART_ITEMS
       });
 
-      const newCartItems = addItemToCart(cartItems, item)
+      const newCartItems = addItemToCart(cartItems, item);
 
       cache.writeQuery({
         query: GET_CART_ITEMS,
